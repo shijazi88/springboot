@@ -1,0 +1,14 @@
+
+**Example 1** (Create Get, Post, Put, Delete Request using **@Controller** and **@ResponseBody**)
+Steps:
+
+1. Create project using STS or Spring Initializr
+1. Add Web Dependency in pom.xml
+1. Create Domain Class (i.e. User)
+1. Create UserController class
+1. Add **@Controller** annotation to UserController class
+1. Add **@RequestMapping** annotation to UserController class **@RequestMapping(value="api")**
+1. Define static List users variable to simulate database and add 2 users to the list
+1. Create new method to return all users in static list  (getAllUsers)
+1. Add **@RequestMapping(value="users", method=RequestMethod.GET)** 
+1. Run the application and call this URL **http://localhost:8080/api/users**
