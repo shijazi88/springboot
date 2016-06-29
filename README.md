@@ -1,6 +1,5 @@
-# spring boot
-In This Repository, I will try to write some examples about spring boot, please check Wiki tab for more details
-
+# Learning Spring boot
+We will try to lean Spring boot by examples, I will add the examples with small explanation here, and you can find more in Wiki tab.
 ## Examples
 - Rest Services
 - Cache
