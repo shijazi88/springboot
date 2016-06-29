@@ -1,4 +1,4 @@
-# springboot
+# sprin gboot
 I will try to write some examples about spring boot , please check Wiki tab for more details
 
 We will explain the following annotations:
