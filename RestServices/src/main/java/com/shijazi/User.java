@@ -2,19 +2,26 @@ package com.shijazi;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="users")
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import com.fasterxml.jackson.annotation.JsonView;
+
+//@JsonIgnoreProperties(value = { "password" })
+@XmlRootElement(name = "users")
 public class User {
-	
+
 	private Long id;
-	
+
+	@JsonView(User.Views.Public.class)
 	private String username;
-	
+
+	@JsonProperty(access = Access.WRITE_ONLY)
 	private String password;
-	
+
 	private String email;
-	
+
 	private String firstname;
-	
+
 	private String lastname;
 
 	public Long getId() {
@@ -82,9 +89,17 @@ public class User {
 	}
 
 	public User() {
-//		super();
+		// super();
 	}
-	
-	
-}
 
+	public static final class Views {
+		// show only public data
+		public interface Public {
+		}
+
+		// show public and internal data
+		public interface Internal extends Public {
+		}
+	}
+
+}

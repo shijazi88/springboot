@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 // use @RestController = @Controller + 
 
 
@@ -30,7 +32,7 @@ public class UserController2 {
 		users.add(u1);
 		users.add(u2);
 	}
-
+	@JsonView(User.Views.Internal.class)
 	@RequestMapping(value = "users", method = RequestMethod.GET)
 	public ResponseEntity<List<User>> getAllUsers() {
 		return new ResponseEntity<>(users,HttpStatus.OK);
