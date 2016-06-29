@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -56,6 +57,28 @@ public class UserController {
 
 		return null;
 
+	}
+	@RequestMapping(value = "/users/{id}", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
+	public @ResponseBody User getUserBy(@PathVariable Long id) {
+		Optional<User> user = users.stream().filter(u -> u.getId().equals(id)).findFirst();
+		if (user.isPresent()) {
+			User u = user.get();
+			return u;
+		}
+		
+		return null;
+		
+	}
+	@RequestMapping(value = "/users", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
+	public @ResponseBody User getUserByUsingRequestParam(@RequestParam(name="id") Long id) {
+		Optional<User> user = users.stream().filter(u -> u.getId().equals(id)).findFirst();
+		if (user.isPresent()) {
+			User u = user.get();
+			return u;
+		}
+		
+		return null;
+		
 	}
 
 	@RequestMapping(value = "/users", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -1,5 +1,8 @@
 package com.shijazi;
 
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="users")
 public class User {
 	
 	private Long id;
