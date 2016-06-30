@@ -1,4 +1,4 @@
-# Learning Spring boot
+# Learning Spring Boot
 We will try to lean Spring boot by examples, I will add the examples with small explanation here, and you can find more in Wiki tab.
 ## Examples
 - Rest Services
@@ -7,7 +7,7 @@ We will try to lean Spring boot by examples, I will add the examples with small 
 
 ## Rest Services Example
 -----------------------------------------------------------------
-## concepts
+## Concepts
 We will explain the following annotations:
 - @Controller vs @RestController
 - Get, Post, Put, Delete examples
